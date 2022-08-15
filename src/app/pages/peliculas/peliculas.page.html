@@ -1,0 +1,47 @@
+
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar translucent>
+    
+      
+      <ion-toolbar class="navigate">
+       
+      
+      </ion-toolbar>
+      
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+
+      <ion-item>
+        <ion-icon name="videocam"></ion-icon>&nbsp;
+       <a [routerLink]="['/create-pelicula']" routerLinkActive="router-link-active" > 
+        <ion-label>crear pelicula</ion-label>
+
+      </a>
+      </ion-item>
+
+   
+
+ </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <app-navbar></app-navbar>
+      
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    
+<app-list-peliculas *ngFor="let pelicula$ of peliculas" [pelicula]="pelicula$"></app-list-peliculas>
+
+  </ion-content>
+</div>
+

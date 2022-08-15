@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlCategories: "https://pluredevapi.azurewebsites.net/api/categories",
+  urlMovies: "https://pluredevapi.azurewebsites.net/api/movies",
+  apikey: "pk_1JnS4dEzN2aBX7Wd88bOrmAvd0TTEhWslRqpsVfDdFYrEp63fQQ6lDGOi3P5tV5FeSqfQGUl2HKVxj1Xe1OYB1hRlMhAfljrKsmW"
+
 };
 
 /*

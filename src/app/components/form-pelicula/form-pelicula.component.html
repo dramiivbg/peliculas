@@ -1,0 +1,64 @@
+
+<div novalidate [formGroup]="form"   #f="ngForm">
+    
+
+
+  <ion-item>
+    
+    <ion-input formControlName="name" placeholder="nombre de la pelicula"></ion-input>
+  
+  
+  </ion-item>
+  
+  <div *ngIf="form.controls['name'].errors" >
+    <ion-text *ngIf="form.controls['name'].errors['required']" color="danger">*Campo requerido</ion-text>
+    
+  
+  
+  </div>
+
+
+  <ion-item >
+
+    <ion-select interface="popover" formControlName="id_categoria" >
+      <ion-select-option value={{categoria.categoryId}} *ngFor="let categoria of categorias$">{{categoria.name}}</ion-select-option>
+     
+    </ion-select>
+  
+  
+  </ion-item>
+  
+    
+  <div *ngIf="form.controls['id_categoria'].errors" >
+    <ion-text *ngIf="form.controls['id_categoria'].errors['required']" color="danger">*Campo requerido</ion-text>
+    <ion-text *ngIf="form.controls['id_categoria'].errors['minLength']" color="danger">*minimo 4 digitos</ion-text>
+  
+  
+  </div>
+  
+  
+  <ion-item>
+  
+    <ion-input formControlName="year" placeholder="año"></ion-input>
+   
+  
+  </ion-item>
+  <div *ngIf="form.controls['year'].errors">
+    <ion-text *ngIf="form.controls['year'].errors['required']" color="danger">*Campo requerido</ion-text>
+  
+  
+  </div>
+  
+  
+
+
+
+
+  
+  
+   
+    <ion-button expand="block" [disabled]="f.invalid" class="mat-flat-button"  (click)="create(form.value)">create</ion-button>
+  
+  
+  </div>
+  
